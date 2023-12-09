@@ -1,7 +1,6 @@
 # Lisp_Interpreter
 Lisp Interpreter written in C#
 # What is Working/Not
-I Successfuly implemented:
 - I have TokenTypes of Lisp. ex. LEFT_PAREN, DEFINE, STRING, NUMBER
 - Scanner works 
 - Parser works.
