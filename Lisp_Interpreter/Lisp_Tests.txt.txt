@@ -1,0 +1,206 @@
+Scanner Tests:
+> (hello)
+LEFT_PAREN (
+IDENTIFIER hello
+RIGHT_PAREN )
+EOF
+> (+ 1 2)
+LEFT_PAREN (
+PLUS +
+NUMBER 1 1
+NUMBER 2 2
+RIGHT_PAREN )
+EOF
+> (+ 0.25 0.75)
+LEFT_PAREN (
+PLUS +
+NUMBER 0.25 0.25
+NUMBER 0.75 0.75
+RIGHT_PAREN )
+EOF
+> (+ 1 (+ 2 3))
+LEFT_PAREN (
+PLUS +
+NUMBER 1 1
+LEFT_PAREN (
+PLUS +
+NUMBER 2 2
+NUMBER 3 3
+RIGHT_PAREN )
+RIGHT_PAREN )
+EOF
+> (+ (+ 1 2) 3)
+LEFT_PAREN (
+PLUS +
+LEFT_PAREN (
+PLUS +
+NUMBER 1 1
+NUMBER 2 2
+RIGHT_PAREN )
+NUMBER 3 3
+RIGHT_PAREN )
+EOF
+> (+ 3 4 5 6)
+LEFT_PAREN (
+PLUS +
+NUMBER 3 3
+NUMBER 4 4
+NUMBER 5 5
+NUMBER 6 6
+RIGHT_PAREN )
+EOF
+> (cond (= 1 2) 1 (= 1 2) 2 't 3)
+[line 1] Error: Unexpected character.
+LEFT_PAREN (
+IDENTIFIER cond
+LEFT_PAREN (
+EQUAL =
+NUMBER 1 1
+NUMBER 2 2
+Scanner Test:
+
+RIGHT_PAREN )
+NUMBER 1 1
+LEFT_PAREN (
+EQUAL =
+NUMBER 1 1
+NUMBER 2 2
+RIGHT_PAREN )
+NUMBER 2 2
+IDENTIFIER t
+NUMBER 3 3
+RIGHT_PAREN )
+EOF
+>
+
+Addition and Parser Test:
+> (+ 1 2)
+Tokens:
+LEFT_PAREN (
+PLUS +
+NUMBER 1 1
+NUMBER 2 2
+RIGHT_PAREN )
+EOF
+
+AST:
+List
+  Addition
+
+Result:
+3
+>
+
+Subtraction and Multiplication:
+> (- 1 2)
+Tokens:
+LEFT_PAREN (
+MINUS -
+NUMBER 1 1
+NUMBER 2 2
+RIGHT_PAREN )
+EOF
+
+AST:
+List
+  Subtraction
+
+Result:
+-1
+> (* 2 4)
+Tokens:
+LEFT_PAREN (
+STAR *
+NUMBER 2 2
+NUMBER 4 4
+RIGHT_PAREN )
+EOF
+
+AST:
+List
+  Multiplication
+
+Result:
+8
+Multiplication test:
+> (* 2 7)
+Tokens:
+LEFT_PAREN (
+STAR *
+NUMBER 2 2
+NUMBER 7 7
+RIGHT_PAREN )
+EOF
+
+AST:
+List
+  Multiplication
+
+Result:
+14
+>
+Division Test:
+> (/ 4 2)
+Tokens:
+LEFT_PAREN (
+SLASH /
+NUMBER 4 4
+NUMBER 2 2
+RIGHT_PAREN )
+EOF
+
+AST:
+List
+  Division
+
+Result:
+2
+
+More complex operation:
+> (+ (+ 1 2) (+ 4 1))
+Tokens:
+LEFT_PAREN (
+PLUS +
+LEFT_PAREN (
+PLUS +
+NUMBER 1 1
+NUMBER 2 2
+RIGHT_PAREN )
+LEFT_PAREN (
+PLUS +
+NUMBER 4 4
+NUMBER 1 1
+RIGHT_PAREN )
+RIGHT_PAREN )
+EOF
+
+AST:
+List
+  Addition
+
+Result:
+8
+
+> (* (+ 1 2) (* 4 1))
+Tokens:
+LEFT_PAREN (
+STAR *
+LEFT_PAREN (
+PLUS +
+NUMBER 1 1
+NUMBER 2 2
+RIGHT_PAREN )
+LEFT_PAREN (
+STAR *
+NUMBER 4 4
+NUMBER 1 1
+RIGHT_PAREN )
+RIGHT_PAREN )
+EOF
+
+AST:
+List
+  Multiplication
+
+Result:
+12

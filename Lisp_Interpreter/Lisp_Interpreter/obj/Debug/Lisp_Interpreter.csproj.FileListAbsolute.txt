@@ -1,0 +1,7 @@
+C:\cs403\Lisp_Interpreter\bin\Debug\Lisp_Interpreter.exe.config
+C:\cs403\Lisp_Interpreter\bin\Debug\Lisp_Interpreter.exe
+C:\cs403\Lisp_Interpreter\bin\Debug\Lisp_Interpreter.pdb
+C:\cs403\Lisp_Interpreter\obj\Debug\Lisp_Interpreter.csproj.AssemblyReference.cache
+C:\cs403\Lisp_Interpreter\obj\Debug\Lisp_Interpreter.csproj.CoreCompileInputs.cache
+C:\cs403\Lisp_Interpreter\obj\Debug\Lisp_Interpreter.exe
+C:\cs403\Lisp_Interpreter\obj\Debug\Lisp_Interpreter.pdb
